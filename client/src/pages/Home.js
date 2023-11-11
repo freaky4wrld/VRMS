@@ -89,10 +89,10 @@ const Home = () => {
 
       <div className="home-buttons">
         {/* If no events with checkInReady: true */}
-        {events.length === 0 && <CreateNewProfileButton />}
-
-        {/* If any events with checkInReady: true */}
-        {events.length > 0 && (
+        {events.length === 0 ? (
+          <h4>No meetings Available</h4>
+        ) :(
+          // If any events with checkInReady: true
           <CheckInButtons
             disabled={selectedEvent === ''}
             event={selectedEvent}
